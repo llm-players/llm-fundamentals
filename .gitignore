@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Outputs (we want to keep outputs in repo for reference)
+# Uncomment if you don't want to track outputs:
+# *.png
+# *.jpg
+# *.log
+# outputs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Model weights and datasets (usually too large for git)
+*.pth
+*.pt
+*.bin
+*.safetensors
+data/raw/
+data/processed/
+models/downloaded/
+
+# Temporary files
+*.tmp
+*.bak
+*~
