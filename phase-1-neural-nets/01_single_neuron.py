@@ -1,10 +1,15 @@
 """
 Step 1: Single Neuron from Scratch
 
-A neuron is the basic building block of neural networks.
-It does: output = activation(weights * inputs + bias)
+Teaches: CONCEPTS_FOR_ENGINEERS.md - Part 1
 
-We'll build one neuron, make predictions, and understand what it does.
+A neuron is like a smooth if-statement:
+- Takes inputs (money, tiredness, etc.)
+- Multiplies each by a weight (how important is it?)
+- Adds a bias (baseline preference)
+- Applies activation (smooth decision)
+
+Formula: output = activation(weights * inputs + bias)
 """
 
 import numpy as np
@@ -48,11 +53,52 @@ class Neuron:
         return output
 
 
-def demo_single_neuron():
-    """Demonstrate how a single neuron works."""
+def demo_coffee_decision():
+    """Real-world example: Should I buy coffee?"""
     
     print("="*70)
-    print("SINGLE NEURON DEMO")
+    print("DEMO 1: COFFEE DECISION (Real-World Example)")
+    print("="*70)
+    print("\nScenario: Should I buy coffee?")
+    print("Inputs: [money, tiredness]")
+    print()
+    
+    # Create a neuron with 2 inputs
+    neuron = Neuron(n_inputs=2)
+    
+    # Set weights manually (how much each factor matters)
+    neuron.weights = np.array([0.3, 0.7])  # tiredness matters more!
+    neuron.bias = -2.0  # Generally reluctant to buy coffee
+    
+    print(f"Weights: {neuron.weights} (money=0.3, tiredness=0.7)")
+    print(f"Bias: {neuron.bias} (baseline reluctance)")
+    
+    # Test scenarios
+    scenarios = [
+        ("Broke and awake", [2.0, 3.0]),
+        ("Rich but awake", [10.0, 3.0]),
+        ("Broke and exhausted", [2.0, 9.0]),
+        ("Rich and exhausted", [10.0, 9.0]),
+    ]
+    
+    print("\n" + "="*70)
+    print("TESTING SCENARIOS")
+    print("="*70)
+    
+    for description, inputs in scenarios:
+        inputs_array = np.array(inputs)
+        output = neuron.forward(inputs_array)
+        decision = "BUY COFFEE!" if output > 3.0 else "Skip coffee"
+        print(f"\n{description}")
+        print(f"  Money: ${inputs[0]}, Tiredness: {inputs[1]}/10")
+        print(f"  Neuron output: {output:.2f} → {decision}")
+
+
+def demo_single_neuron():
+    """Generic demonstration of how a neuron works."""
+    
+    print("\n" + "="*70)
+    print("DEMO 2: GENERIC NEURON (Abstract Example)")
     print("="*70)
     
     # Create a neuron with 3 inputs
@@ -65,21 +111,21 @@ def demo_single_neuron():
         np.array([-1.0, -2.0, -3.0]),
     ]
     
-    print("\n" + "="*70)
-    print("MAKING PREDICTIONS")
-    print("="*70)
+    print("\nMAKING PREDICTIONS")
     
     for i, inputs in enumerate(test_inputs, 1):
         output = neuron.forward(inputs)
+        weighted_sum = np.dot(neuron.weights, inputs) + neuron.bias
         print(f"\nInput {i}: {inputs}")
-        print(f"Output: {output:.4f}")
+        print(f"  Weighted sum: {weighted_sum:.4f}")
+        print(f"  After ReLU: {output:.4f}")
 
 
 def visualize_neuron_behavior():
     """Visualize how a neuron transforms inputs."""
     
     print("\n" + "="*70)
-    print("VISUALIZING NEURON BEHAVIOR")
+    print("DEMO 3: VISUALIZING NEURON BEHAVIOR")
     print("="*70)
     
     # Create a simple neuron with 1 input
@@ -115,20 +161,25 @@ def visualize_neuron_behavior():
 def main():
     """Run all demos."""
     
-    # Demo 1: Basic neuron
+    # Demo 1: Real-world example (coffee decision)
+    demo_coffee_decision()
+    
+    # Demo 2: Generic neuron
     demo_single_neuron()
     
-    # Demo 2: Visualize behavior
+    # Demo 3: Visualize behavior
     visualize_neuron_behavior()
     
     print("\n" + "="*70)
-    print("KEY TAKEAWAYS")
+    print("KEY TAKEAWAYS (Review CONCEPTS_FOR_ENGINEERS.md Part 1)")
     print("="*70)
-    print("1. A neuron does: output = activation(weights * inputs + bias)")
-    print("2. Weights determine how much each input matters")
-    print("3. Bias shifts the output")
-    print("4. ReLU activation makes output 0 or positive")
-    print("\nNext: Learn how to make the neuron LEARN (backpropagation)")
+    print("1. A neuron is like a smooth if-statement")
+    print("2. Weights = How much each input matters")
+    print("3. Bias = Baseline preference")
+    print("4. Activation (ReLU) = Smooth decision function")
+    print("5. Formula: output = max(0, weights·inputs + bias)")
+    print("\nYou just built a decision-maker that can be trained!")
+    print("\nNext: 02_backpropagation.py - Learn how neurons LEARN")
     print("="*70)
 
 
