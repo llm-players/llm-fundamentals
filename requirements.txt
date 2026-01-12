@@ -1,7 +1,13 @@
-# Core dependencies
+# Phase 1-2 Dependencies (Neural Networks, Transformers)
 numpy>=1.24.0
 matplotlib>=3.7.0
 
-# Optional: PyTorch (for later phases)
+# Phase 3+ Dependencies (Language Models, Training, Inference)
+# Uncomment when you reach Phase 3:
 # torch>=2.1.0
-# Will add PyTorch when we reach Phase 3
+# transformers>=4.35.0
+# 
+# To install PyTorch with CUDA support (for GPU):
+# python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Note: Phase 1-2 run fine on CPU. GPU becomes important in Phase 3+.

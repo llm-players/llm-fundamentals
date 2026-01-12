@@ -4,6 +4,32 @@
 
 ---
 
+## Setup (First Time Only)
+
+If you haven't set up the environment yet:
+
+```powershell
+# 1. Make sure you're in the project root
+cd LLM-Fundamentals
+
+# 2. Create virtual environment
+python -m venv venv
+
+# 3. Activate it
+venv\Scripts\activate.bat  # Windows
+# source venv/bin/activate  # Mac/Linux
+
+# 4. Install dependencies
+python -m pip install -r requirements.txt
+```
+
+**Verify setup**:
+```powershell
+python -c "import numpy; import matplotlib; print('Ready!')"
+```
+
+---
+
 ## What You'll Build
 
 1. **Linear layers** (matrix multiplication)
@@ -119,12 +145,24 @@ You're ready for Phase 2 when you can:
 
 ## Getting Started
 
-**Next**: Open [01_single_neuron.py](01_single_neuron.py) and start coding!
+### **Step 0: Learn the Concepts** (Optional but Recommended)
+Read [docs/CONCEPTS.md](docs/CONCEPTS.md) for foundational concepts:
+- What neurons, layers, and activations are
+- How backpropagation works
+- Common problems and solutions
+
+**Or**: Jump straight into coding and refer back when needed!
+
+### **Step 1: Start Coding**
+Open [01_single_neuron.py](01_single_neuron.py) and run it:
+```powershell
+python phase-1-neural-nets/01_single_neuron.py
+```
 
 **Remember**: 
 - Type the code yourself (no copy-paste)
 - Run it frequently
 - Break it intentionally
-- Document what you learn
+- Document what you learn in `docs/LEARNING_LOG.md`
 
 **Let's build!**
