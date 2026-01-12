@@ -146,10 +146,18 @@ You're ready for Phase 2 when you can:
 ## Getting Started
 
 ### **Step 0: Learn the Concepts** (Optional but Recommended)
-Read [docs/CONCEPTS.md](docs/CONCEPTS.md) for foundational concepts:
-- What neurons, layers, and activations are
-- How backpropagation works
-- Common problems and solutions
+
+**New to ML?** Start here:
+- [docs/CONCEPTS_FOR_ENGINEERS.md](docs/CONCEPTS_FOR_ENGINEERS.md) — **For software engineers with no ML background**
+  - Uses programming analogies you already know
+  - No jargon, no assumptions
+  - Concrete examples and code
+
+**Want more depth?**
+- [docs/CONCEPTS.md](docs/CONCEPTS.md) — Traditional ML explanations
+  - Neurons, layers, activations
+  - Backpropagation details
+  - Common problems and solutions
 
 **Or**: Jump straight into coding and refer back when needed!
 
